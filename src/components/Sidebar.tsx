@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { X, Menu, BookOpen, Target, AlertTriangle, Zap, Eye, Users, MapPin, Scissors, Search, TrendingUp, Play, Lightbulb, CheckCircle } from 'lucide-react';
+import { X, Menu, BookOpen, Target, AlertTriangle, Zap, Eye, Users, MapPin, Scissors, Search, TrendingUp, Play, CheckCircle } from 'lucide-react';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -21,7 +21,6 @@ const menuItems = [
   { id: 'step4', title: 'Passo 4: Identificar Oportunidades', icon: Search },
   { id: 'step5', title: 'Passo 5: Priorizar para Impacto', icon: TrendingUp },
   { id: 'step6', title: 'Passo 6: Executar e Expandir', icon: Play },
-  { id: 'lab', title: 'Laboratório de IA', icon: Lightbulb },
   { id: 'conclusion', title: 'Conclusão', icon: CheckCircle }
 ];
 
@@ -31,7 +30,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle, activeSection, onNa
       {/* Menu Toggle Button */}
       <button
         onClick={onToggle}
-        className="fixed top-6 left-6 z-50 p-3 bg-primary text-primary-foreground rounded-lg shadow-lg hover:bg-primary/90 transition-colors"
+        className="fixed top-6 left-6 z-50 p-3 bg-primary text-primary-foreground rounded-full shadow-lg hover:bg-primary/90 transition-all duration-200 hover:scale-105"
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
@@ -46,7 +45,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle, activeSection, onNa
 
       {/* Sidebar */}
       <div className={`sidebar-nav ${isOpen ? 'open' : ''}`}>
-        <div className="p-6 border-b">
+        <div className="p-6 border-b border-border">
           <h2 className="text-xl font-bold text-primary">AI Brand Agents</h2>
           <p className="text-sm text-muted-foreground">Framework Estratégico</p>
         </div>
